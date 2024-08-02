@@ -16,7 +16,7 @@ public partial class Patient : BaseRemovableAuditablePaginationEntity
 
     public DateTime? BirthDate { get; set; }
 
-    public string FullName { get => $"{FirstName}{LastName}".Trim(); }
+    public string FullName { get => $"{FirstName} {LastName}".Trim(); }
 
     public virtual ICollection<Appointment> Appointment { get; } = new List<Appointment>();
 
