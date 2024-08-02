@@ -29,8 +29,5 @@ public class PatientConfiguration : IEntityTypeConfiguration<Patient>
         builder.Property(e => e.LastName)
             .HasMaxLength(200)
             .IsUnicode(false);
-        builder.Property(e => e.MiddleName)
-            .HasMaxLength(150)
-            .IsUnicode(false);
     }
 }

@@ -8,8 +8,6 @@ public partial class Patient : BaseRemovableAuditablePaginationEntity
 
     public string FirstName { get; set; } = null!;
 
-    public string? MiddleName { get; set; }
-
     public string LastName { get; set; } = null!;
 
     public string CellPhone { get; set; } = null!;
@@ -18,7 +16,7 @@ public partial class Patient : BaseRemovableAuditablePaginationEntity
 
     public DateTime? BirthDate { get; set; }
 
-    public string FullName { get => $"{FirstName} {MiddleName} {LastName}".Trim(); }
+    public string FullName { get => $"{FirstName}{LastName}".Trim(); }
 
     public virtual ICollection<Appointment> Appointment { get; } = new List<Appointment>();
 

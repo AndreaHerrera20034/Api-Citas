@@ -168,7 +168,6 @@ public class MappingProfile : Profile
             (src, dest) =>
             {
                 dest.FirstName = src.FirstName;
-                dest.MiddleName = src.MiddleName;
                 dest.LastName = src.LastName;
                 dest.CellPhone = src.CellPhone;
                 dest.Code = Guid.NewGuid();
