@@ -167,30 +167,15 @@ public class MappingProfile : Profile
         .AfterMap(
             (src, dest) =>
             {
-                dest.FirstName = "Asignar";
-                dest.LastName = "Asignar";
-                dest.CellPhone = "Asignar";
+                dest.FirstName = src.FirstName;
+                dest.MiddleName = src.MiddleName;
+                dest.LastName = src.LastName;
+                dest.CellPhone = src.CellPhone;
                 dest.Code = Guid.NewGuid();
                 dest.IsDeleted = ValuesStatusPropertyEntity.IsNotDeleted;
                 dest.CreatedDate = DateTime.Now;
                 dest.Gender = (short)Gender.DontSay;
                 dest.BirthDate = DateTime.Now;
-
-                var customerAddress = new PatientAddress
-                {
-                    RegisterDate = DateTime.Now,
-                    IsDefault = true,
-                    Address = new Address
-                    {
-                        Address1 = "Asignar",
-                        Address2 = "Asignar",
-                        Street = "Asignar",
-                        ExternalNumber = "Asignar",
-                        InternalNumber = "Asignar",
-                        ZipCode = "Asignar",
-                    }
-                };
-                dest.PatientAddress.Add(customerAddress);
             }
         );
 
@@ -252,25 +237,6 @@ public class MappingProfile : Profile
             opt => opt.MapFrom(src => src.Email)
         );
 
-        // UpdateMapping
-
-        CreateMap<PatientUpdateRequestDto, PatientAddress>()
-        .AfterMap(
-            (src, dest) => 
-            {
-                dest.Address = new Address
-                {
-                    Address1 = src.Address1,
-                    Address2 = src.Address2,
-                    Street = src.Street,
-                    ExternalNumber = src.ExternalNumber,
-                    InternalNumber = src.InternalNumber,
-                    ZipCode = src.ZipCode
-                };
-            }
-        );
-
-        CreateMap<PatientUpdateRequestDto, Patient>();
 
         // QueryFilterMapping
 

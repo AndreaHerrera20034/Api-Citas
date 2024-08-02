@@ -8,4 +8,18 @@ public class UserAccountPatientCreateRequestDto
     public string Password { get; set; } = null!;
 
     public string? Email { get; set; }
+
+    //user info
+
+    public string FirstName { get; set; } = null!;
+
+    public string? MiddleName { get; set; }
+
+    public string LastName { get; set; } = null!;
+
+    public string CellPhone { get; set; } = null!;
+
+    public short? Gender { get; set; }
+
+    public DateTime? BirthDate { get; set; }
 }

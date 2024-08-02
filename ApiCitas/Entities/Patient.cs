@@ -22,7 +22,5 @@ public partial class Patient : BaseRemovableAuditablePaginationEntity
 
     public virtual ICollection<Appointment> Appointment { get; } = new List<Appointment>();
 
-    public virtual ICollection<PatientAddress> PatientAddress { get; } = new List<PatientAddress>();
-
     public virtual ICollection<UserAccount> UserAccount { get; } = new List<UserAccount>();
 }

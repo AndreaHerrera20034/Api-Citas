@@ -27,8 +27,6 @@ public partial class AMNDbContext : DbContext
 
     public virtual DbSet<Patient> Patient { get; set; }
 
-    public virtual DbSet<PatientAddress> PatientAddress { get; set; }
-
     public virtual DbSet<UserAccount> UserAccount { get; set; }
 
     public virtual DbSet<ActiveUserAccountDoctor> ActiveUserAccountDoctor { get; set; }

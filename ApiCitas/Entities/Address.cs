@@ -31,5 +31,4 @@ public partial class Address : BaseEntity
 
     public virtual ICollection<Consultory> Consultory { get; } = new List<Consultory>();
 
-    public virtual ICollection<PatientAddress> PatientAddress { get; } = new List<PatientAddress>();
 }
